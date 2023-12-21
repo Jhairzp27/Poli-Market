@@ -1,6 +1,9 @@
 /**
  * @author: Jhair Zambrano
  */
+        // QUE PROCESO DESEA REALIZAR EJ: Comprar
+
+        // CREAR PROCESO PARA DETERMINAR QUE TIPO DE CLIENTE ES EL USUARIO
 public class Empresa {
 
     private String nombreEmpresa;
