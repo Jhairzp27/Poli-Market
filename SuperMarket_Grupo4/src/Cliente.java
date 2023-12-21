@@ -17,7 +17,21 @@ public class Cliente {
         return nombre;
     }
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        // Filtrar caracteres no permitidos y ajustar longitud
+        StringBuilder nombreValido = new StringBuilder();
+        for (char c : nombre.toCharArray()) {
+            if (Character.isLetter(c)) {
+                nombreValido.append(c);
+            }
+        }
+
+        // Limitar la longitud a, por ejemplo, 20 caracteres
+        if (nombreValido.length() > 20) {
+            nombreValido.setLength(20);
+            
+        }
+
+        this.nombre = nombreValido.toString();
     }
     public String getDireccion() {
         return direccion;
