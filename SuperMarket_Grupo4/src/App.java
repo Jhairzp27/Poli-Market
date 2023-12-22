@@ -4,7 +4,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
 
-        String blue = "\u001B[34m", reset = "\u001B[0m", orange = "\u001B[38;5;208m";
+        String blue = "\u001B[34m", reset = "\u001B[0m";
         Short opcionMenu = 0;
         String cyan = "\033[36m";
         String yellow = "\033[33m";
@@ -13,6 +13,8 @@ public class App {
         String purple = "\033[35;1m";
         String reingresoMenu = "si";
         Double montoDeConsumo = 0.0;
+        Float monto= 0.0f;
+        Boolean continuar = false;
         Empresa nEmpresa = new Empresa("PoliMarket", "2420626", "1395478962458");
         // Modificacion del nombre de la empresa
         nEmpresa.setNombreEmpresa(
@@ -22,7 +24,7 @@ public class App {
         // Modificacion del nombre de la empresa
         nEmpresa.setIdent("1795482544576");
 
-        System.out.println(orange + "------------+ Bienvenido a: " + nEmpresa.getNombreEmpresa() + " s.a +------------" + reset);
+        System.out.println("Bienvenido a: " + blue + nEmpresa.getNombreEmpresa() + " s.a" + reset);
         System.out.println("Numero telefonico: " + nEmpresa.getNumTelefonico());
         System.out.println("RUC: " + nEmpresa.getIdent());
         // QUE PROCESO DESEA REALIZAR EJ: Comprar
@@ -88,21 +90,22 @@ public class App {
         System.out.println(blue + "Nombre: " + reset + producto3.getNombreProducto());
         System.out.println(blue + "Precio de compra: " + reset + "$" + producto3.getPrecioCompra());
         System.out.println(blue + "Precio de venta al público: " + reset + "$" + producto3.getPrecioVentaAlPublico());
+        Cliente oCliente = new Cliente();
+
         // Tarjeta
 
         System.out.println(purple + "....................Bienvenido...................." + reset);
         System.out.println(cyan + "Defina la clave de su tarjeta : " + reset);
         String claveOriginal = sc.nextLine();
         esperarTeclaYLimpiarConsola(sc);
-        TarjetaDeCredito oTarjetaDeCredito = new TarjetaDeCredito("Pepito Perez", "master", claveOriginal,
-                750, 1000);
+        TarjetaDeCredito oTarjetaDeCredito = new TarjetaDeCredito("Pepito Perez", "master", claveOriginal,                750, 1000);
         do {
             try {
 
                 do {
                     oTarjetaDeCredito.mostrarMenu();
                     opcionMenu = Short.parseShort(sc.nextLine());
-                } while (opcionMenu < 1 || opcionMenu > 8);
+                } while (opcionMenu < 1 || opcionMenu > 9);
             } catch (NumberFormatException e) {
                 System.out.println(red + "Ingrese únicamente la opción numérica" + reset);
             }
@@ -163,10 +166,52 @@ public class App {
                     } else {
                         System.out.println(red + "Clave erronea" + reset);
                     }
+                case 9: 
+                    do {
+                        esperarTeclaYLimpiarConsola(sc);
+                        System.out.println(yellow + "9. Comprar producto" + reset);
+                        System.out.println("1. " + producto1.getNombreProducto() + " Precio: " + producto1.getPrecioVentaAlPublico());
+                        System.out.println("2. " + producto2.getNombreProducto() + " Precio: " + producto2.getPrecioVentaAlPublico());
+                        System.out.println("3. " + producto3.getNombreProducto() + " Precio: " + producto3.getPrecioVentaAlPublico());
+                        try {
+                            int opcionProducto = 0;
+                            do {
+                                System.out.println("Ingrese una opción: ");
+                                opcionProducto = Integer.parseInt(sc.nextLine());
+                            } while (opcionProducto < 1 || opcionProducto > 3);
 
-                    break;
+                            switch (opcionProducto) {
+                                case 1:
+                                    monto = oCliente.comprar(producto1.getNombreProducto(), producto1.getPrecioVentaAlPublico());
+                                    
+                                    break;
+                                case 2:
+                                    monto = oCliente.comprar(producto2.getNombreProducto(), producto2.getPrecioVentaAlPublico());
+                                    break;
+                                case 3:
+                                    monto = oCliente.comprar(producto3.getNombreProducto(), producto3.getPrecioVentaAlPublico());
+                                    break;
+
+                            }
+                        } catch (NumberFormatException e) {
+                            System.out.println(red + "Ingrese únicamente la opción numérica" + reset);
+                        }
+                        try {
+                            do {
+                                System.out.println(red +"Si desea comprar más ingrese 1 caso contrario 2"+ reset);
+                                opcionMenu = Short.parseShort(sc.nextLine());
+                            } while (opcionMenu < 1 || opcionMenu > 2);
+                            } catch (NumberFormatException e) {
+                                System.out.println(red + "Ingrese únicamente la opción numérica" + reset);
+                        }
+                        if (opcionMenu == 2) {
+                            break;
+                        }
+                    } while (true);
 
             }
+                System.out.println("Es hora de pagar: " + monto );
+
             System.out.println(purple + "Desea regresar al menu?" + reset);
             reingresoMenu = sc.nextLine();
             esperarTeclaYLimpiarConsola(sc);
@@ -189,4 +234,5 @@ public class App {
             System.out.println("Error al limpiar la consola: ");
         }
     }
+    
 }
