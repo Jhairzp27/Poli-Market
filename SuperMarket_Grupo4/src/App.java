@@ -32,5 +32,33 @@ public class App {
         System.out.println("Direccion: " + cliente1.getDireccion());
         System.out.println("Nombre2: " + persona.getNombre());
 
+        // Producto - Christian Pisco 
+        Producto producto1 = new Producto(1, "P001", "Leche Descremada 1L", 1.5f, 2.0f);
+        Producto producto2 = new Producto(2, "P002", "Arroz Integral 1kg", 1.8f, 3.5f);
+        Producto producto3 = new Producto(3, "P003", "Manzanas (kg)", 2.0f, 4.0f);
+
+        // Mostrar información de productos
+        System.out.println("-- PRODUCTOS --");
+
+        System.out.println("Producto 1:");
+        System.out.println("ID: " + producto1.getIdProducto());
+        System.out.println("Código: " + producto1.getCodigoProducto());
+        System.out.println("Nombre: " + producto1.getNombreProducto());
+        System.out.println("Precio de compra: $" + producto1.getPrecioCompra());
+        System.out.println("Precio de venta al público: $" + producto1.getPrecioVentaAlPublico());
+
+        System.out.println("\nProducto 2:");
+        System.out.println("ID: " + producto2.getIdProducto());
+        System.out.println("Código: " + producto2.getCodigoProducto());
+        System.out.println("Nombre: " + producto2.getNombreProducto());
+        System.out.println("Precio de compra: $" + producto2.getPrecioCompra());
+        System.out.println("Precio de venta al público: $" + producto2.getPrecioVentaAlPublico());
+
+        System.out.println("\nProducto 3:");
+        System.out.println("ID: " + producto3.getIdProducto());
+        System.out.println("Código: " + producto3.getCodigoProducto());
+        System.out.println("Nombre: " + producto3.getNombreProducto());
+        System.out.println("Precio de compra: $" + producto3.getPrecioCompra());
+        System.out.println("Precio de venta al público: $" + producto3.getPrecioVentaAlPublico());
     }
 }
