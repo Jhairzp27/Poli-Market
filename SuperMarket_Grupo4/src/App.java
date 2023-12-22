@@ -33,13 +33,14 @@ public class App {
         cliente1.setDireccion("Calle principal 441");
         cliente1.setNroTelefonico("0978984334");
 
+        // Persona_Juridica - Jhordy Parra
         Persona_Juridica persona_Juridica = new Persona_Juridica("ID2004", "Comercial Shiker", "Av 8 de diciembre",
                 "0984146275", "comercial@shiker.com", "1751405678001", "Cooperativa", "Lobazo Gonzalez");
         System.out.println("\nINFORMACION DE LA PERSONA JURIDICA: \n");
         System.out.println("ID: " + persona_Juridica.getId());
-        System.out.println("Nombre: " + persona_Juridica.getNombre());
+        System.out.println("Nombre de la Persona Juridica: " + persona_Juridica.getNombre());
         System.out.println("Dirección: " + persona_Juridica.getDireccion());
-        System.out.println("Numero de Telefono" + persona_Juridica.getNroTelefonico());
+        System.out.println("Numero de Telefono: " + persona_Juridica.getNroTelefonico());
         System.out.println("Correo: " + persona_Juridica.geteMail());
         System.out.println("RUC: " + persona_Juridica.getRuc());
         System.out.println("Tipo de Persona Juridica: " + persona_Juridica.getTipoPersonaJuridica());
