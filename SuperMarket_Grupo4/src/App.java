@@ -5,9 +5,9 @@ public class App {
 
         Empresa nEmpresa = new Empresa("PoliMarket", "2420626", 547662);
         // Modificacion del nombre de la empresa
-        nEmpresa.setNombreEmpresa("Poli Market");
+        nEmpresa.setNombreEmpresa("Poli Market lleve lleve todo a mejor precio, no como en el tuti que le cobran las fundas");
         // Modificacion del nombre de la empresa
-        nEmpresa.setNumTelefonico("453625457");
+        nEmpresa.setNumTelefonico("45362545714859673250");
         // Modificacion del nombre de la empresa
         nEmpresa.setIdent(547892);
 

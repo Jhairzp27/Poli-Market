@@ -44,6 +44,7 @@ public class Empresa {
         if (numTelefonico.length() <= 8) {
             this.numTelefonico = numTelefonico;
         } else {
+            System.out.println(red + "El numero de telefono que usted ingreso fue recortado ha los primeros 7" + reset);
             this.numTelefonico = numTelefonico.substring(0, 7);
         }
     }
