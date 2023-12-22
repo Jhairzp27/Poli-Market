@@ -24,6 +24,7 @@ public class TarjetaDeCredito {
     private String codigoSeguridad;
     private String tipoTarjeta;
     private String claveOriginal;
+
     private double cupo;
     private double sueldo;
 
@@ -54,6 +55,14 @@ public class TarjetaDeCredito {
         cyan = "\033[36m";
         reset = "\u001B[0m";
         green = "\033[32m";
+    }
+
+    public String getClaveOriginal() {
+        return claveOriginal;
+    }
+
+    public void setClaveOriginal(String claveOriginal) {
+        this.claveOriginal = claveOriginal;
     }
 
     public String getNombreApellido() {
@@ -106,7 +115,7 @@ public class TarjetaDeCredito {
 
     public void setClave(String claveIngresada, String claveNueva) {
         if (getClave(claveIngresada) == true) {
-            claveOriginal = encriptarMD5(claveNueva);
+            setClaveOriginal(encriptarMD5(claveNueva));
             System.out.println((green + "Clave reestablecida" + reset));
         } else {
             System.out.println(red + "Clave erronea" + reset);
