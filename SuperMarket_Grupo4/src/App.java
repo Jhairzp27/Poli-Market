@@ -4,7 +4,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
 
-        String blue = "\u001B[34m", reset = "\u001B[0m";
+        String blue = "\u001B[34m", reset = "\u001B[0m", orange = "\u001B[38;5;208m";
         Short opcionMenu = 0;
         String cyan = "\033[36m";
         String yellow = "\033[33m";
@@ -22,7 +22,7 @@ public class App {
         // Modificacion del nombre de la empresa
         nEmpresa.setIdent("1795482544576");
 
-        System.out.println("Bienvenido a: " + blue + nEmpresa.getNombreEmpresa() + " s.a" + reset);
+        System.out.println(orange + "------------+ Bienvenido a: " + nEmpresa.getNombreEmpresa() + " s.a +------------" + reset);
         System.out.println("Numero telefonico: " + nEmpresa.getNumTelefonico());
         System.out.println("RUC: " + nEmpresa.getIdent());
         // QUE PROCESO DESEA REALIZAR EJ: Comprar
