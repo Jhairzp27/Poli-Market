@@ -2,6 +2,9 @@
  * CodeCrew, ruth.rueda@epn.edu.ec
  * Versión 1.0
  */
+
+// Proceso para gestionar la compra de productos 
+// Proceso para la cancelación de la compra
  
 public class Cajero {
     private int idCajero;
@@ -13,6 +16,20 @@ public class Cajero {
     private boolean estadoDeCaja;
 
     public Empresa e;
+
+    // constructor
+    public Cajero(){}
+    public Cajero(int idCajero, String nombre, String apellido, String turnoDeTrabajo, int numeroDeCaja, int ventasRealizadas, boolean estadoDeCaja){
+        this.idCajero = idCajero;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.turnoDeTrabajo = turnoDeTrabajo;
+        this.numeroDeCaja = numeroDeCaja;
+        this.ventasRealizadas = ventasRealizadas;
+        this.estadoDeCaja = estadoDeCaja;
+    }
+
+    // getter setters
 
     public int getIdCajero() {
         return idCajero;
