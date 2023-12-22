@@ -207,7 +207,8 @@ public class TarjetaDeCredito {
         System.out.println("5. Bloquear Tarjeta");
         System.out.println("6. Estado de cuenta");
         System.out.println("7. Consulta de saldo");
-        System.out.println("8. Mostrar tarjeta" + reset);
+        System.out.println("8. Mostrar tarjeta" );
+        System.out.println("9. Comprar producto"+ reset);
     }
 
     public String encriptarMD5(String textoAEncriptar) {
