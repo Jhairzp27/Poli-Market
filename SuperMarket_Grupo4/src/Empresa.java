@@ -8,12 +8,13 @@ public class Empresa {
 
     private String nombreEmpresa;
     private String numTelefonico;
-    private int ident;
+    private String ident;
+    public Cajero c;
 
     String red = "\033[31m", reset = "\u001B[0m";
 
     
-    public Empresa(String nombreEmpresa, String numTelefonico, int ident){
+    public Empresa(String nombreEmpresa, String numTelefonico, String ident){
         this.nombreEmpresa = nombreEmpresa;
         this.numTelefonico = numTelefonico;
         this.ident = ident;
@@ -41,21 +42,35 @@ public class Empresa {
     }
 
     public void setNumTelefonico(String numTelefonico) {
-        if (numTelefonico.length() <= 8) {
+        if (numTelefonico.length() == 7 ) {
             this.numTelefonico = numTelefonico;
-        } else {
+        }else if (numTelefonico.length() < 7) {
+            System.out.println(red + "Numero de telefono invalido, recuerde que debe tener 7 digitos. \n Se la asignara un numero telefonico por defecto" + reset);
+        } else if(numTelefonico.length() > 7){
             System.out.println(red + "El numero de telefono que usted ingreso fue recortado ha los primeros 7" + reset);
             this.numTelefonico = numTelefonico.substring(0, 7);
         }
     }
+    
+    
 
     //IDENTIFICADOR DE EMPRESA
-    public int getIdent() {
+    public String getIdent() {
         return ident;
     }
 
-    public void setIdent(int ident) {
-        this.ident = ident;
+    public void setIdent(String ident) {
+        char tercerDigito = ident.charAt(2);
+        if (ident.length() == 13 &  Character.toString(tercerDigito).equals("9")) {
+            this.ident = ident;
+        } else if(ident.length() > 13 & Character.toString(tercerDigito).equals("9")){
+            System.out.println(red + "El RUC ingresado ha sido recortado a los primeros 13 terminos" + reset);
+            this.ident = ident.substring(0, 13);
+        }else if(ident.length() < 13 & Character.toString(tercerDigito).equals("9")){
+            System.out.println(red + "El RUC ingresado es menor a la cantidad minima de 13 caracteres, se le asiganara un RUC por defecto"+reset);
+        }else{
+            System.out.println(red+"RUC invalido, recuerde que el tercer digito debe ser un 9 por la SCVSS, se le asignara un RUC por defecto"+ reset);
+        }
     }
 
 
