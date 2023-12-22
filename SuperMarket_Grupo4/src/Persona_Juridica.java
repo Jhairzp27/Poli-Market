@@ -2,7 +2,14 @@ public class Persona_Juridica extends Cliente{
     private String ruc;
     private String tipoPersonaJuridica;
     private String representanteLegal;
-    
+    private String sitioWeb;
+
+    public String getSitioWeb() {
+        return sitioWeb;
+    }
+    public void setSitioWeb(String sitioWeb) {
+        this.sitioWeb = sitioWeb;
+    }
     public String getRepresentanteLegal() {
         return representanteLegal;
     }
@@ -22,16 +29,17 @@ public class Persona_Juridica extends Cliente{
         this.ruc = ruc;
     }
 
-    public Persona_Juridica(String id, String nombre, String direccion, String nroTelefono, String eMail, 
-                            String ruc, String tipoPersonaJuridica, String representanteLegal){
+    public Persona_Juridica(String id, String nombreEmpresa, String direccion, String nroTelefono, String eMail, 
+                            String ruc, String tipoPersonaJuridica, String representanteLegal, String sitioWeb){
         super();
         setId           (id);
-        setNombre       (nombre);
+        setNombre       (nombreEmpresa);
         setDireccion    (direccion);
         setNroTelefonico(nroTelefono);
         seteMail        (eMail);
-        this.ruc =       ruc;
+        this.ruc                 = ruc;
         this.tipoPersonaJuridica = tipoPersonaJuridica;
-        this.representanteLegal =  representanteLegal;
+        this.representanteLegal  = representanteLegal;
+        this.sitioWeb            = sitioWeb;
     }
 }

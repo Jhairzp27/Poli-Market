@@ -23,16 +23,17 @@ public class App {
         cliente1.setDireccion("Calle principal 441");
         cliente1.setNroTelefonico("0978984334");
 
-        Persona_Juridica persona_Juridica = new Persona_Juridica("ID2004", "Comercial Shiker", "Av 8 de diciembre", "0984146275", "comercial@shiker.com", "1751405678001", "Cooperativa", "Lobazo Gonzalez");
+        Persona_Juridica persona_Juridica = new Persona_Juridica("ID2004", "Comercial Shiker", "Av 8 de diciembre", "0984146275", "comercial@shiker.com", "1751405678001", "Cooperativa", "Lobazo Gonzalez", "www.comercialshiker.com");
         System.out.println("\nINFORMACION DE LA PERSONA JURIDICA: \n");
         System.out.println("ID: " + persona_Juridica.getId());
-        System.out.println("Nombre: " + persona_Juridica.getNombre());
+        System.out.println("Nombre Empresa: " + persona_Juridica.getNombre());
         System.out.println("Dirección: " + persona_Juridica.getDireccion());
         System.out.println("Numero de Telefono" + persona_Juridica.getNroTelefonico());
         System.out.println("Correo: " + persona_Juridica.geteMail());
         System.out.println("RUC: " + persona_Juridica.getRuc());
         System.out.println("Tipo de Persona Juridica: " + persona_Juridica.getTipoPersonaJuridica());
-        System.out.println("Representante Legal: " + persona_Juridica.getRepresentanteLegal() + "\n");
+        System.out.println("Representante Legal: " + persona_Juridica.getRepresentanteLegal());
+        System.out.println("Sitio Web: " + persona_Juridica.getSitioWeb() + "\n");
 
         Persona_Natural persona = new Persona_Natural("ID2003", "Carmen","Zambrano", "Avenida central 321", "0978763456", "carmen_sd@gmail.com", "1734671879", "01/01/2003", "Ecuatoriana");
         persona.setNombre("Isaac");
