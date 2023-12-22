@@ -13,14 +13,14 @@ public class App {
         String purple = "\033[35;1m";
         String reingresoMenu = "si";
         Double montoDeConsumo = 0.0;
-        Empresa nEmpresa = new Empresa("PoliMarket", "2420626", "547662");
+        Empresa nEmpresa = new Empresa("PoliMarket", "2420626", "1395478962458");
         // Modificacion del nombre de la empresa
         nEmpresa.setNombreEmpresa(
-                "Poli Market lleve lleve todo a mejor precio, no como en el tuti que le cobran las fundas");
+                "Poli Market");
         // Modificacion del nombre de la empresa
-        nEmpresa.setNumTelefonico("45362545714859673250");
+        nEmpresa.setNumTelefonico("4536255");
         // Modificacion del nombre de la empresa
-        nEmpresa.setIdent("547892");
+        nEmpresa.setIdent("1795482544576");
 
         System.out.println("Bienvenido a: " + blue + nEmpresa.getNombreEmpresa() + " s.a" + reset);
         System.out.println("Numero telefonico: " + nEmpresa.getNumTelefonico());

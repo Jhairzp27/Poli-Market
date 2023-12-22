@@ -41,13 +41,17 @@ public class Empresa {
     }
 
     public void setNumTelefonico(String numTelefonico) {
-        if (numTelefonico.length() <= 8) {
+        if (numTelefonico.length() == 7 ) {
             this.numTelefonico = numTelefonico;
-        } else {
+        }else if (numTelefonico.length() < 7) {
+            System.out.println(red + "Numero de telefono invalido, recuerde que debe tener 7 digitos. \n Se la asignara un numero telefonico por defecto" + reset);
+        } else if(numTelefonico.length() > 7){
             System.out.println(red + "El numero de telefono que usted ingreso fue recortado ha los primeros 7" + reset);
             this.numTelefonico = numTelefonico.substring(0, 7);
         }
     }
+    
+    
 
     //IDENTIFICADOR DE EMPRESA
     public String getIdent() {
@@ -55,12 +59,16 @@ public class Empresa {
     }
 
     public void setIdent(String ident) {
-        if (ident.length() <= 13 ) {
-            
+        char tercerDigito = ident.charAt(2);
+        if (ident.length() == 13 &  Character.toString(tercerDigito).equals("9")) {
             this.ident = ident;
-        } else {
+        } else if(ident.length() > 13 & Character.toString(tercerDigito).equals("9")){
             System.out.println(red + "El RUC ingresado ha sido recortado a los primeros 13 terminos" + reset);
             this.ident = ident.substring(0, 13);
+        }else if(ident.length() < 13 & Character.toString(tercerDigito).equals("9")){
+            System.out.println(red + "El RUC ingresado es menor a la cantidad minima de 13 caracteres, se le asiganara un RUC por defecto"+reset);
+        }else{
+            System.out.println(red+"RUC invalido, recuerde que el tercer digito debe ser un 9 por la SCVSS, se le asignara un RUC por defecto"+ reset);
         }
     }
 
