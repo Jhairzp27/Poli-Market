@@ -28,61 +28,66 @@ public class App {
         // QUE PROCESO DESEA REALIZAR EJ: Comprar
 
         // CREAR PROCESO PARA DETERMINAR QUE TIPO DE CLIENTE ES EL USUARIO
-        Cliente cliente1 = new Cliente();
-        cliente1.setNombre("Ju@ansssssssssssssssssssss");
-        cliente1.setDireccion("Calle principal 441");
-        cliente1.setNroTelefonico("0978984334");
+        System.out.println(green + "\n+======= TIPOS DE CLIENTE =======+" + reset);
 
         // Persona_Juridica - Jhordy Parra
         Persona_Juridica persona_Juridica = new Persona_Juridica("ID2004", "Comercial Shiker", "Av 8 de diciembre",
                 "0984146275", "comercial@shiker.com", "1751405678001", "Cooperativa", "Lobazo Gonzalez");
-        System.out.println("\nINFORMACION DE LA PERSONA JURIDICA: \n");
-        System.out.println("ID: " + persona_Juridica.getId());
-        System.out.println("Nombre de la Persona Juridica: " + persona_Juridica.getNombre());
-        System.out.println("Dirección: " + persona_Juridica.getDireccion());
-        System.out.println("Numero de Telefono: " + persona_Juridica.getNroTelefonico());
-        System.out.println("Correo: " + persona_Juridica.geteMail());
-        System.out.println("RUC: " + persona_Juridica.getRuc());
-        System.out.println("Tipo de Persona Juridica: " + persona_Juridica.getTipoPersonaJuridica());
-        System.out.println("Representante Legal: " + persona_Juridica.getRepresentanteLegal() + "\n");
+       
+        System.out.println(red + "\nINFORMACION DE LA PERSONA JURIDICA: \n" + reset);
+        System.out.println(blue + "ID: " + reset + persona_Juridica.getId());
+        System.out.println(blue + "Nombre de la Persona Juridica: " + reset + persona_Juridica.getNombre());
+        System.out.println(blue + "Dirección: " + reset + persona_Juridica.getDireccion());
+        System.out.println(blue + "Numero de Telefono: " + reset + persona_Juridica.getNroTelefonico());
+        System.out.println(blue + "Correo: " + reset + persona_Juridica.geteMail());
+        System.out.println(blue + "RUC: " + reset + persona_Juridica.getRuc());
+        System.out.println(blue + "Tipo de Persona Juridica: " + reset + persona_Juridica.getTipoPersonaJuridica());
+        System.out.println(blue + "Representante Legal: " + reset + persona_Juridica.getRepresentanteLegal() + "\n");
 
-        Persona_Natural persona = new Persona_Natural("ID2003", "Carmen", "Zambrano", "Avenida central 321",
-                "0978763456", "carmen_sd@gmail.com", "1734671879", "01/01/2003", "Ecuatoriana");
-        persona.setNombre("Isaac");
+        Persona_Natural personaNatural = new Persona_Natural("ID2003", "Carmen", "Zambrano", "Avenida central 321",
+                "0978763456", "carmen_sd@gmail.com", "17346718792", "12/31/2003", "Ecuatoriana");
 
-        System.out.println("INFORMACION DEL CLIENTE: ");
-        System.out.println("Nombre: " + cliente1.getNombre());
-        System.out.println("Direccion: " + cliente1.getDireccion());
-        System.out.println("Nombre2: " + persona.getNombre());
-
+        // PersonaNatural - Isaac Proaño 
+        System.out.println(red + "\nINFORMACION DE LA PERSONA NATURAL: \n" + reset);
+        System.out.println(blue + "ID: " + reset + personaNatural.getId());
+        System.out.println(blue + "Nombre: " + reset + personaNatural.getNombre());
+        System.out.println(blue + "Apellido: " + reset + personaNatural.getApellido());
+        System.out.println(blue + "Direccion: " + reset + personaNatural.getDireccion());
+        System.out.println(blue + "Numero de Telefono: " + reset + personaNatural.getNroTelefonico());
+        System.out.println(blue + "Correo: " + reset + personaNatural.geteMail());
+        System.out.println(blue + "Cedula: " + reset + personaNatural.getCi());
+        System.out.println(blue + "Fecha de Nacimiento: " + reset + personaNatural.getfechaNacimiento());
+        System.out.println(blue + "Nacionalidad: " + reset + personaNatural.getNacionalidad());
+        
+        System.out.println(" ");
         // Producto - Christian Pisco
         Producto producto1 = new Producto(1, "P001", "Leche Descremada 1L", 1.5f, 2.0f);
         Producto producto2 = new Producto(2, "P002", "Arroz Integral 1kg", 1.8f, 3.5f);
         Producto producto3 = new Producto(3, "P003", "Manzanas (kg)", 2.0f, 4.0f);
 
         // Mostrar información de productos
-        System.out.println("-- PRODUCTOS --");
+        System.out.println(green + "-- PRODUCTOS --" + reset);
 
         System.out.println("Producto 1:");
-        System.out.println("ID: " + producto1.getIdProducto());
-        System.out.println("Código: " + producto1.getCodigoProducto());
-        System.out.println("Nombre: " + producto1.getNombreProducto());
-        System.out.println("Precio de compra: $" + producto1.getPrecioCompra());
-        System.out.println("Precio de venta al público: $" + producto1.getPrecioVentaAlPublico());
+        System.out.println(blue + "ID: " + reset + producto1.getIdProducto());
+        System.out.println(blue + "Código: " + reset + producto1.getCodigoProducto());
+        System.out.println(blue + "Nombre: " + reset + producto1.getNombreProducto());
+        System.out.println(blue + "Precio de compra: " + reset + "$" + producto1.getPrecioCompra());
+        System.out.println(blue + "Precio de venta al público: " + reset + "$" + producto1.getPrecioVentaAlPublico());
 
         System.out.println("\nProducto 2:");
-        System.out.println("ID: " + producto2.getIdProducto());
-        System.out.println("Código: " + producto2.getCodigoProducto());
-        System.out.println("Nombre: " + producto2.getNombreProducto());
-        System.out.println("Precio de compra: $" + producto2.getPrecioCompra());
-        System.out.println("Precio de venta al público: $" + producto2.getPrecioVentaAlPublico());
+        System.out.println(blue + "ID: " + reset + producto2.getIdProducto());
+        System.out.println(blue + "Código: " + reset + producto2.getCodigoProducto());
+        System.out.println(blue + "Nombre: " + reset + producto2.getNombreProducto());
+        System.out.println(blue + "Precio de compra: " + reset + "$" + producto2.getPrecioCompra());
+        System.out.println(blue + "Precio de venta al público: " + reset + "$" + producto2.getPrecioVentaAlPublico());
 
         System.out.println("\nProducto 3:");
-        System.out.println("ID: " + producto3.getIdProducto());
-        System.out.println("Código: " + producto3.getCodigoProducto());
-        System.out.println("Nombre: " + producto3.getNombreProducto());
-        System.out.println("Precio de compra: $" + producto3.getPrecioCompra());
-        System.out.println("Precio de venta al público: $" + producto3.getPrecioVentaAlPublico());
+        System.out.println(blue + "ID: " + reset + producto3.getIdProducto());
+        System.out.println(blue + "Código: " + reset + producto3.getCodigoProducto());
+        System.out.println(blue + "Nombre: " + reset + producto3.getNombreProducto());
+        System.out.println(blue + "Precio de compra: " + reset + "$" + producto3.getPrecioCompra());
+        System.out.println(blue + "Precio de venta al público: " + reset + "$" + producto3.getPrecioVentaAlPublico());
         // Tarjeta
 
         System.out.println(purple + "....................Bienvenido...................." + reset);
