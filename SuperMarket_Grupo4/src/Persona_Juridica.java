@@ -1,3 +1,8 @@
+/**
+ * Copyright (C) 2023, Jhordy Parra
+ * (CodeCrew) jhordy.parra@epn.edu.ec
+ * Version 1.0
+ */
 public class Persona_Juridica extends Cliente{
     private String ruc;
     private String tipoPersonaJuridica;
