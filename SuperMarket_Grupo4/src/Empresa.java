@@ -8,12 +8,12 @@ public class Empresa {
 
     private String nombreEmpresa;
     private String numTelefonico;
-    private int ident;
+    private String ident;
 
     String red = "\033[31m", reset = "\u001B[0m";
 
     
-    public Empresa(String nombreEmpresa, String numTelefonico, int ident){
+    public Empresa(String nombreEmpresa, String numTelefonico, String ident){
         this.nombreEmpresa = nombreEmpresa;
         this.numTelefonico = numTelefonico;
         this.ident = ident;
@@ -50,12 +50,18 @@ public class Empresa {
     }
 
     //IDENTIFICADOR DE EMPRESA
-    public int getIdent() {
+    public String getIdent() {
         return ident;
     }
 
-    public void setIdent(int ident) {
-        this.ident = ident;
+    public void setIdent(String ident) {
+        if (ident.length() <= 13 ) {
+            
+            this.ident = ident;
+        } else {
+            System.out.println(red + "El RUC ingresado ha sido recortado a los primeros 13 terminos" + reset);
+            this.ident = ident.substring(0, 13);
+        }
     }
 
 

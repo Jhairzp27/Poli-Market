@@ -13,18 +13,18 @@ public class App {
         String purple = "\033[35;1m";
         String reingresoMenu = "si";
         Double montoDeConsumo = 0.0;
-        Empresa nEmpresa = new Empresa("PoliMarket", "2420626", 547662);
+        Empresa nEmpresa = new Empresa("PoliMarket", "2420626", "547662");
         // Modificacion del nombre de la empresa
         nEmpresa.setNombreEmpresa(
                 "Poli Market lleve lleve todo a mejor precio, no como en el tuti que le cobran las fundas");
         // Modificacion del nombre de la empresa
         nEmpresa.setNumTelefonico("45362545714859673250");
         // Modificacion del nombre de la empresa
-        nEmpresa.setIdent(547892);
+        nEmpresa.setIdent("547892");
 
         System.out.println("Bienvenido a: " + blue + nEmpresa.getNombreEmpresa() + " s.a" + reset);
         System.out.println("Numero telefonico: " + nEmpresa.getNumTelefonico());
-        System.out.println("Identificador: " + nEmpresa.getIdent());
+        System.out.println("RUC: " + nEmpresa.getIdent());
         // QUE PROCESO DESEA REALIZAR EJ: Comprar
 
         // CREAR PROCESO PARA DETERMINAR QUE TIPO DE CLIENTE ES EL USUARIO
