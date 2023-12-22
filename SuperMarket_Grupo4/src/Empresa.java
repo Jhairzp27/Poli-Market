@@ -9,6 +9,7 @@ public class Empresa {
     private String nombreEmpresa;
     private String numTelefonico;
     private String ident;
+    public Cajero c;
 
     String red = "\033[31m", reset = "\u001B[0m";
 
